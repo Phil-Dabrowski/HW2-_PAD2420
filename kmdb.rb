@@ -37,6 +37,7 @@
 #DESTORY Tables
 Studio.destroy_all
 Movie.destroy_all
+Actor.destroy_all
 # - Insert the "Batman" sample data using ruby code. Do not use hard-coded ids.
 #Studio
 puts "there are #{Studio.all.count} studios"
@@ -47,14 +48,111 @@ studio.save
 puts "there are #{Studio.all.count} studios"
 
 #Movie
-
+wb = Studio.find_by({"name" => "Warner Bros."})
 puts "there are #{Movie.all.count} movies"
 movie = Movie.new
 movie["title"] = "Batman Begins"
 movie["year_released"] = 2005
 movie["rated"] = "PG-13"
+movie["studio_id"] = wb["id"]
 movie.save
 puts "there are #{Movie.all.count} movies"
+
+##
+puts "there are #{Movie.all.count} movies"
+movie = Movie.new
+movie["title"] = "The Dark Knight"
+movie["year_released"] = 2008
+movie["rated"] = "PG-13"
+movie["studio_id"] = wb["id"]
+movie.save
+puts "there are #{Movie.all.count} movies"
+##
+puts "there are #{Movie.all.count} movies"
+movie = Movie.new
+movie["title"] = "The Dark Knight Rises"
+movie["year_released"] = 2012
+movie["rated"] = "PG-13"
+movie["studio_id"] = wb["id"]
+movie.save
+puts "there are #{Movie.all.count} movies"
+
+###Actors
+puts "there are #{Actor.all.count} actors"
+actor = Actor.new
+actor["name"] = "Christian Bale"
+actor.save
+puts "there are #{Actor.all.count} actors"
+##
+puts "there are #{Actor.all.count} actors"
+actor = Actor.new
+actor["name"] = "Michael Caine"
+actor.save
+puts "there are #{Actor.all.count} actors"
+
+##
+puts "there are #{Actor.all.count} actors"
+actor = Actor.new
+actor["name"] = "Liam Neeson"
+actor.save
+puts "there are #{Actor.all.count} actors"
+
+##
+puts "there are #{Actor.all.count} actors"
+actor = Actor.new
+actor["name"] = "Katie Holmes"
+actor.save
+puts "there are #{Actor.all.count} actors"
+
+##
+puts "there are #{Actor.all.count} actors"
+actor = Actor.new
+actor["name"] = "Gary Oldman"
+actor.save
+puts "there are #{Actor.all.count} actors"
+
+##
+puts "there are #{Actor.all.count} actors"
+actor = Actor.new
+actor["name"] = "Heath Ledger"
+actor.save
+puts "there are #{Actor.all.count} actors"
+
+##
+puts "there are #{Actor.all.count} actors"
+actor = Actor.new
+actor["name"] = "Aaron Eckhart"
+actor.save
+puts "there are #{Actor.all.count} actors"
+
+
+##
+puts "there are #{Actor.all.count} actors"
+actor = Actor.new
+actor["name"] = "Maggie Gyllenhaal"
+actor.save
+puts "there are #{Actor.all.count} actors"
+
+##
+puts "there are #{Actor.all.count} actors"
+actor = Actor.new
+actor["name"] = "Tom Hardy"
+actor.save
+puts "there are #{Actor.all.count} actors"
+
+##
+puts "there are #{Actor.all.count} actors"
+actor = Actor.new
+actor["name"] = "Joseph Gordon-Levitt"
+actor.save
+puts "there are #{Actor.all.count} actors"
+
+##
+puts "there are #{Actor.all.count} actors"
+actor = Actor.new
+actor["name"] = "Anne Hathaway"
+actor.save
+puts "there are #{Actor.all.count} actors"
 
 
 #   Delete any existing data beforehand so that each run of this script does not
