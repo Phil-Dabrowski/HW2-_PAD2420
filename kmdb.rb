@@ -34,8 +34,29 @@
 ## Fill out migrate models with framework from SQL Homework
 ## Run Command below to create table apps
 #rails db:migrate
-
+#DESTORY Tables
+Studio.destroy_all
+Movie.destroy_all
 # - Insert the "Batman" sample data using ruby code. Do not use hard-coded ids.
+#Studio
+puts "there are #{Studio.all.count} studios"
+studio = Studio.new
+
+studio["name"] = "Warner Bros."
+studio.save
+puts "there are #{Studio.all.count} studios"
+
+#Movie
+
+puts "there are #{Movie.all.count} movies"
+movie = Movie.new
+movie["title"] = "Batman Begins"
+movie["year_released"] = 2005
+movie["rated"] = "PG-13"
+movie.save
+puts "there are #{Movie.all.count} movies"
+
+
 #   Delete any existing data beforehand so that each run of this script does not
 #   create duplicate data. (5 points)
 # - Query the data and loop through the results to display output similar to the
